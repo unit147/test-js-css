@@ -57,7 +57,7 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return mockData ? mockedCouponTemplate(values) : couponTemplate(values)
+        return couponTemplate(values)
       },
     }),
     exporters: {
