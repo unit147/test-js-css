@@ -178,7 +178,7 @@ unlayer.registerTool({
         for (let i = 0; i < maxDummyProducts; i++) {
           data.products.push({title: '{{ product.title }}', price: '{{ product.price }}'})
         }
-        return Mustache.render(mockData ? mockedCartRecoveryTemplate(values) : cartRecoveryTemplate(values), data)
+        return Mustache.render(cartRecoveryTemplate(values), data)
       },
     }),
     exporters: {
