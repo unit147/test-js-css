@@ -1,6 +1,14 @@
+const mockData = typeof _mockMarker !== 'undefined'
+
 let couponTemplate = _.template(`
     <div style="text-align: <%= alignment %>; color: <%= textColor %>; font-size: <%= fontSize %>px;">
       {{ coupon.code }}
+    </div>
+`)
+
+let mockedCouponTemplate = _.template(`
+    <div style="text-align: <%= alignment %>; color: <%= textColor %>; font-size: <%= fontSize %>px;">
+      GKBCREQR8634
     </div>
 `)
 
@@ -49,15 +57,15 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return couponTemplate(values)
+        return mockData ? mockedCouponTemplate(values) : couponTemplate(values)
       },
     }),
     exporters: {
       web: function(values) {
-        return couponTemplate(values)
+        return mockData ? mockedCouponTemplate(values) : couponTemplate(values)
       },
       email: function(values) {
-        return couponTemplate(values)
+        return mockData ? mockedCouponTemplate(values) : couponTemplate(values)
       },
     },
     head: {
