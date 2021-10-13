@@ -1,4 +1,4 @@
-const mockData = typeof _mockMarker !== 'undefined'
+let mockData = typeof _mockMarker !== 'undefined'
 
 let couponTemplate = _.template(`
     <div style="text-align: <%= alignment %>; color: <%= textColor %>; font-size: <%= fontSize %>px;">
